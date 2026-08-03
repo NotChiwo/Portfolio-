@@ -1,0 +1,91 @@
+.dashboard {
+  padding: 6.5rem 0 4rem;
+  min-height: 100vh;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "identity identity about   about"
+    "identity identity skills  skills"
+    "journey  journey  journey journey"
+    "certs    certs    contact contact";
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.bento-card {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-identity { grid-area: identity; }
+.card-about    { grid-area: about; }
+.card-skills   { grid-area: skills; }
+.card-journey  { grid-area: journey; }
+.card-certs    { grid-area: certs; }
+.card-contact  { grid-area: contact; }
+
+.card-header {
+  margin-bottom: 1.1rem;
+}
+
+.card-eyebrow {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--color-text-faint);
+}
+
+.card-eyebrow .num::before {
+  content: var(--eyebrow-prefix);
+  color: var(--color-text-faint);
+}
+
+.card-eyebrow .num {
+  color: var(--color-text-muted);
+}
+
+.card-title {
+  font-size: 1.05rem;
+  margin-top: 0.35rem;
+  color: var(--color-text);
+}
+
+/* ============ Responsive collapse ============ */
+@media (max-width: 960px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "identity identity"
+      "about    about"
+      "skills   skills"
+      "journey  journey"
+      "certs    contact";
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard {
+    padding: 6rem 0 3rem;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "identity"
+      "about"
+      "skills"
+      "journey"
+      "certs"
+      "contact";
+    gap: 0.85rem;
+  }
+
+  .bento-card {
+    padding: 1.35rem;
+  }
+}
