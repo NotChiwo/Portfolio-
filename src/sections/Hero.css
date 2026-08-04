@@ -16,13 +16,14 @@
 }
 
 .hero-photo {
-  width: 84px;
-  height: 84px;
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: var(--surface-radius);
   border: 1px solid var(--color-border);
   filter: grayscale(15%);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 [data-theme="light"] .hero-photo {
